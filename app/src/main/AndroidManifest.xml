@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tavares.projetoculinaria">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_receitas"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_receitas_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.ReceitaActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.IngredientesActivity"
+            android:label="@string/title_activity_ingred"
+            android:parentActivityName=".activity.ReceitaActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tavares.projetoculinaria.activity.ReceitaActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.StepsActivity"
+            android:label="@string/title_activity_steps"
+            android:parentActivityName=".activity.IngredientesActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tavares.projetoculinaria.activity.IngredientesActivity" />
+        </activity>
+
+        <provider
+            android:name=".data.ReceitaProvider"
+            android:authorities="com.tavares.projetoculinaria"
+            android:exported="true" />
+
+        <receiver android:name=".widget.ReceitaAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/receitas_app_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".widget.ReceitaRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:name=".widget.ReceiraWidgetService" />
+
+    </application>
+
+</manifest>

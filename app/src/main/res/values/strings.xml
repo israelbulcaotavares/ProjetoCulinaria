@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ProjetoCulinaria</string>
+
+    <string name="title_activity_ingred">IngredActivity</string>
+    <string name="title_activity_steps">StepsActivity</string>
+    <string name="sem_resultados">Sem resultados</string>
+    <string name="sucesso">Receita salva no seu Widget</string>
+    <string name="erro">erro</string>
+    <string name="ingredientes">ingredientes</string>
+    <string name="nome_da_receita">Nome da Receita</string>
+    <string name="descricao">Descrição</string>
+    <string name="passo_a_passo">Passo-a-passo</string>
+    <string name="name">Nome</string>
+    <string name="minhas_receitas">Minhas Receitas</string>
+    <string name="titulo_ingredientes">Ingredientes</string>
+    <string name="video">Video</string>
+</resources>
